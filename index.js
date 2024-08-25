@@ -16,11 +16,10 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-<<<<<<< HEAD
+
   origin: 'https://zuai-lime.vercel.app/',
-=======
-  origin: 'http://localhost:5173',
->>>>>>> 1b845a2ddd4c0e479eed8971dfc6cb581cd261f5
+
+
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -61,11 +60,9 @@ const upload = multer({ storage: storage });
 // Serve static files
 app.use("/images", express.static(path.join(__dirname, "images"), {
   setHeaders: (res, path, stat) => {
-<<<<<<< HEAD
+
     res.set('Access-Control-Allow-Origin', 'https://zuai-lime.vercel.app/');
-=======
-    res.set('Access-Control-Allow-Origin', 'http://localhost:5173');
->>>>>>> 1b845a2ddd4c0e479eed8971dfc6cb581cd261f5
+
     res.set('Access-Control-Allow-Credentials', 'true');
   }
 }));
