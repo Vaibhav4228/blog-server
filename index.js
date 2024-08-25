@@ -16,7 +16,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: 'https://zuai-lime.vercel.app/',
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -57,7 +57,7 @@ const upload = multer({ storage: storage });
 // Serve static files
 app.use("/images", express.static(path.join(__dirname, "images"), {
   setHeaders: (res, path, stat) => {
-    res.set('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.set('Access-Control-Allow-Origin', 'https://zuai-lime.vercel.app/');
     res.set('Access-Control-Allow-Credentials', 'true');
   }
 }));
@@ -88,7 +88,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Connect to the database and start the server only if not in test mode
+
 if (process.env.MONGODB_URI !== 'test') {
   connectDB().then(() => {
     app.listen(5000, () => {
@@ -97,5 +97,5 @@ if (process.env.MONGODB_URI !== 'test') {
   });
 }
 
-// Export the app for testing
+
 export default app;
