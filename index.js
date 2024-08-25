@@ -93,11 +93,6 @@ app.use((req, res, next) => {
   next();
 });
 
-<<<<<<< HEAD
-
-=======
-// Connect to the database and start the server only if not in test mode
->>>>>>> 1b845a2ddd4c0e479eed8971dfc6cb581cd261f5
 if (process.env.MONGODB_URI !== 'test') {
   connectDB().then(() => {
     app.listen(5000, () => {
@@ -106,9 +101,5 @@ if (process.env.MONGODB_URI !== 'test') {
   });
 }
 
-<<<<<<< HEAD
 
-=======
-// Export the app for testing
->>>>>>> 1b845a2ddd4c0e479eed8971dfc6cb581cd261f5
 export default app;
