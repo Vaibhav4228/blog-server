@@ -17,7 +17,7 @@ const app = express();
 
 const corsOptions = {
 
-  origin: 'https://zuai-lime.vercel.app/',
+  origin: 'https://zuai-lime.vercel.app',
 
 
   credentials: true,
@@ -61,7 +61,7 @@ const upload = multer({ storage: storage });
 app.use("/images", express.static(path.join(__dirname, "images"), {
   setHeaders: (res, path, stat) => {
 
-    res.set('Access-Control-Allow-Origin', 'https://zuai-lime.vercel.app/');
+    res.set('Access-Control-Allow-Origin', 'https://zuai-lime.vercel.app');
 
     res.set('Access-Control-Allow-Credentials', 'true');
   }
